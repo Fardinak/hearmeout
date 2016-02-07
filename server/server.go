@@ -66,7 +66,7 @@ func watchInput(out chan string, client *Client) {
 	if err != nil {
 		fmt.Printf("[error] Client %s connection closed\n", client.IP)
 		client.conn.Close()
-		removeEntry(client, clients)
+		clients = removeEntry(client, clients)
 		return
 	}
 	client.Username = strings.TrimSpace(username)
@@ -102,7 +102,7 @@ func watchInput(out chan string, client *Client) {
 				clients,
 			)
 			client.conn.Close()
-			removeEntry(client, clients)
+			clients = removeEntry(client, clients)
 			return
 		}
 
