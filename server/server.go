@@ -141,6 +141,7 @@ func sendMessage(message string, from *Client, at time.Time, to []*Client) {
 	}
 }
 
+// Barrowed bit (https://github.com/jhudson8/golang-chat-example/blob/eafee7c0e6f62b352db8cf1da84bf1f590768f13/util/util.go#L140)
 // remove client entry from stored clients
 func removeEntry(client *Client, arr []*Client) []*Client {
 	rtn := arr
